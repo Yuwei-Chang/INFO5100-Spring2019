@@ -1,1 +1,7 @@
-// 
+//Simulating a virtual class Room
+
+Objects
+
+VirtualClassRoom
+	Behaviors:
+		Boolean letStudentIn(Student s)
