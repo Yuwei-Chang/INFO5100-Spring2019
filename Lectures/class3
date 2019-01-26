@@ -1,0 +1,30 @@
+Constructors
+
+- Constructor is a piece of code in the class that gets executed when an object is created
+- A class can have multiple constructors (with different input parameters)
+- A constructor can invoke another constructor using this(<<with parameters>>) as the first statement in the constructor
+- this key word can be prefixe in front of a instance variable to differentiate between the input to constructor and the instance name
+- Constructors should not have a return type (not even void)
+- Every Object will have a default constructor (provided by JVM) only if we don't write any constructors
+
+
+OOPS
+	- Encapsulation
+	- Abstraction
+	- Inheritance
+	- Polymorphism
+	
+Encapsulation
+
+- Encapsulation is a mechanism to hide accessing data of an Object directly from outside
+- Encapsulation is achieved by a scope named private that is attached to the instance variable
+- Every data should be made private and it can be accessed by a public xxx getXXX(){} method also known as accessor
+- Every data should be made private and it can be mutated by a public void setXXX(XXX xxx){} method, also known as mutator
+- Logic can be written in mutator to ensure that data is  not corrupted
+
+
+Abstraction 
+
+- Focusing on what as against how
+- Define behaviors in a way where each behavior can invoke another behavior as against writing all the logic in one behavior (drive())
+- 
