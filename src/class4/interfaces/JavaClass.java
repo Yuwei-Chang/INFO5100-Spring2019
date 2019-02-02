@@ -5,7 +5,7 @@ public class JavaClass {
 	public static void main(String[] args) {
 		Student amanda = new Student();
 		EngineeringDirector siva = new EngineeringDirector();
-		amanda.learn(siva);
+		amanda.learnFromEngineeringDirector(siva);
 		Student phoenix = new Student();
 		for (int i = 0; i < 10; i++) {
 			Teacher t = makeTeacher();
@@ -36,7 +36,7 @@ class Student {
 		teacher.teach();
 	}
 
-	void learn(EngineeringDirector ed) {
+	void learnFromEngineeringDirector(EngineeringDirector ed) {
 		ed.teach();
 	}
 }
