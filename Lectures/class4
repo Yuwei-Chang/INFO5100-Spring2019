@@ -1,0 +1,9 @@
+Inheritance
+
+Inheritance is a mechanism to reuse functionality between classes
+A class can inherit from another class using extends keyword
+Child class inherits data and behavior from the base class
+Java only supports multi level inheritance (with only parent for every class)
+Only public, protected and default scoped data or behaviors can be inherited into child classes
+A method in the base class can be overriden in the child class (Use @override annotation for overridden behaviors)
+Constructor from the base class will be invoked in the child class before invoking the child class constructor
