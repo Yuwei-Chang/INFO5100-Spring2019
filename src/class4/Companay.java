@@ -11,6 +11,9 @@ public class Companay {
 		
 		Manager manager[] = new Manager[100];
 		Engineer engineer[] = new Engineer[100];
+		
+		ClassRoom cr = new ClassRoom();
+		//cr.
 
 	}
 
