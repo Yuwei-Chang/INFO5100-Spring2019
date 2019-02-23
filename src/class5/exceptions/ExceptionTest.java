@@ -30,6 +30,8 @@ public class ExceptionTest {
 		System.out.println(a + " + " + b + " = " + s);
 
 	}
+	
+	//2.935 - 3.382
 
 	private static int getNumber(Scanner scanner, String message) {
 		while (true) {
