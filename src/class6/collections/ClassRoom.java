@@ -4,8 +4,8 @@ public class ClassRoom {
 
 	public static void main(String[] args) {
 		// StudentGroup sg = new StudentGroupArrayImplementation();
-		// StudentGroup sg = new StudentGroupArrayListImplementation();
-		StudentGroup sg = new StudentGroupMapImplementation();
+		StudentGroup sg = new StudentGroupArrayListImplementation();
+		//StudentGroup sg = new StudentGroupMapImplementation();
 		sg.addStudent(new Student("Larry", 100));
 		sg.addStudent(new Student("Phoenix", 101));
 		sg.addStudent(new Student("Amanda", 102));

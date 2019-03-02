@@ -59,8 +59,8 @@ public class StudentGroupArrayImplementation implements StudentGroup {
 	@Override
 	public void modifyStudent(int roll, String name) {
 		for (Student s : students) {
-			// if (s == null)
-			// continue;
+			if (s == null)
+				continue;
 			if (s.roll == roll) {
 				s.name = name;
 				return;

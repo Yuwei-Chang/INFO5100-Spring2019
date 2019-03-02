@@ -1,0 +1,15 @@
+How to work with Threads - Option 1
+
+Write a class that extends Thread
+Override the run() method in Thread to perform the behavior you want to execute concurrently
+Create the object of this Thread class
+Invoke start() on the object created above
+
+
+How to work with Threads - Option 2
+
+Write a class that implements Runnable interface
+Override run() method in this class to invoke the behavior you want to execute concurrently
+Create the object of this class that implements Runnable
+Create a Thread with the object created above
+invoke start() on the thread object created above
