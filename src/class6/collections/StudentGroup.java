@@ -1,5 +1,7 @@
 package class6.collections;
 
+import java.util.List;
+
 public interface StudentGroup {
 	public int getCount();
 
@@ -13,5 +15,6 @@ public interface StudentGroup {
 
 	public void displayStudents();
 
-}
+	public List<Student> getStudents();
 
+}

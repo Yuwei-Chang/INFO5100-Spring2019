@@ -1,6 +1,7 @@
 package class6.collections;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class StudentGroupArrayListImplementation implements StudentGroup {
 	ArrayList<Student> students = new ArrayList<Student>();
@@ -45,6 +46,11 @@ public class StudentGroupArrayListImplementation implements StudentGroup {
 	public void displayStudents() {
 		System.out.println(students);
 
+	}
+
+	@Override
+	public List<Student> getStudents() {
+		return students;
 	}
 
 }

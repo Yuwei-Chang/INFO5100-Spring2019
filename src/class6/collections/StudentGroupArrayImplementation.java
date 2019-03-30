@@ -1,5 +1,9 @@
 package class6.collections;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class StudentGroupArrayImplementation implements StudentGroup {
 
 	private Student[] students = new Student[2];
@@ -77,6 +81,11 @@ public class StudentGroupArrayImplementation implements StudentGroup {
 		}
 		System.out.println("]");
 
+	}
+
+	@Override
+	public List<Student> getStudents() {
+		return Arrays.asList(students);
 	}
 
 }

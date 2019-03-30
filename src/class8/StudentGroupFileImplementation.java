@@ -5,6 +5,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.List;
 import java.util.Scanner;
 
 import class6.collections.Student;
@@ -17,11 +18,10 @@ public class StudentGroupFileImplementation implements StudentGroup {
 	FileOutputStream fos;
 	File file;
 
-	StudentGroupFileImplementation() throws FileNotFoundException {
+	public StudentGroupFileImplementation() throws FileNotFoundException {
 		file = new File("//Users/sdosapati/Downloads/students.txt");
-		fos = new FileOutputStream(file, true);
 		readStudentsFromFile();
-
+		fos = new FileOutputStream(file);
 	}
 
 	private void readStudentsFromFile() throws FileNotFoundException {
@@ -32,6 +32,7 @@ public class StudentGroupFileImplementation implements StudentGroup {
 			Student st = new Student(tokens[1], Integer.parseInt(tokens[0]));
 			sg.addStudent(st);
 		}
+		sg.displayStudents();
 
 	}
 
@@ -43,6 +44,26 @@ public class StudentGroupFileImplementation implements StudentGroup {
 	@Override
 	public void addStudent(Student s) {
 		sg.addStudent(s);
+		flushStudentsToFile();
+
+	}
+
+	public void flushStudentsToFile() {
+		List<Student> students = sg.getStudents();
+		System.out.println(students);
+		for (Student s : students) {
+			addStudentToFile(s);
+		}
+		try {
+			fos.close();
+			fos = new FileOutputStream(file);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+	}
+
+	private void addStudentToFile(Student s) {
 		String output = s.getRoll() + "," + s.getName() + "\n";
 		byte b[] = output.getBytes();
 		try {
@@ -63,12 +84,14 @@ public class StudentGroupFileImplementation implements StudentGroup {
 	@Override
 	public void deleteStudent(int roll) {
 		sg.deleteStudent(roll);
+		flushStudentsToFile();
 
 	}
 
 	@Override
 	public void modifyStudent(int roll, String name) {
 		sg.modifyStudent(roll, name);
+		flushStudentsToFile();
 
 	}
 
@@ -76,6 +99,11 @@ public class StudentGroupFileImplementation implements StudentGroup {
 	public void displayStudents() {
 		sg.displayStudents();
 
+	}
+
+	@Override
+	public List<Student> getStudents() {
+		return sg.getStudents();
 	}
 
 }

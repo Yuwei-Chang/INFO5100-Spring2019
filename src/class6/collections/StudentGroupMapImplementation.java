@@ -1,6 +1,8 @@
 package class6.collections;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class StudentGroupMapImplementation implements StudentGroup {
@@ -42,6 +44,11 @@ public class StudentGroupMapImplementation implements StudentGroup {
 	public void displayStudents() {
 		System.out.println(students.values());
 
+	}
+
+	@Override
+	public List<Student> getStudents() {
+		return new ArrayList<Student>(students.values());
 	}
 
 }
