@@ -15,13 +15,13 @@ import class6.collections.StudentGroupArrayListImplementation;
 public class StudentGroupFileImplementation implements StudentGroup {
 
 	private StudentGroup sg = new StudentGroupArrayListImplementation();
-	FileOutputStream fos;
+	// FileOutputStream fos;
 	File file;
 
 	public StudentGroupFileImplementation() throws FileNotFoundException {
 		file = new File("//Users/sdosapati/Downloads/students.txt");
 		readStudentsFromFile();
-		fos = new FileOutputStream(file);
+		// fos = new FileOutputStream(file);
 	}
 
 	private void readStudentsFromFile() throws FileNotFoundException {
@@ -50,20 +50,21 @@ public class StudentGroupFileImplementation implements StudentGroup {
 
 	public void flushStudentsToFile() {
 		List<Student> students = sg.getStudents();
-		System.out.println(students);
-		for (Student s : students) {
-			addStudentToFile(s);
-		}
+		// System.out.println(students);
 		try {
+			FileOutputStream fos = new FileOutputStream(file);
+			for (Student s : students) {
+				addStudentToFile(s, fos);
+			}
+
 			fos.close();
-			fos = new FileOutputStream(file);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 
 	}
 
-	private void addStudentToFile(Student s) {
+	private void addStudentToFile(Student s, FileOutputStream fos) {
 		String output = s.getRoll() + "," + s.getName() + "\n";
 		byte b[] = output.getBytes();
 		try {
